@@ -1,0 +1,186 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard</title>
+    <style>
+        #container{
+          border-radius: 8px;
+          border: solid white;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+           width: 40%;
+           margin: auto;
+           height: 520px;
+        }
+        #container div:nth-child(1){
+            width: 100%;
+            height: 20vh;
+            display: flex;
+            justify-content:space-evenly;
+        }
+        #container div:nth-child(1) div{
+            width: 35%;
+            height: 90%;
+            border-radius: 9px;
+        }
+        #container div:nth-child(1) div:nth-child(1){
+            background-color: rgb(19, 203, 19);
+        }
+        #container div:nth-child(1) div:nth-child(2){
+            background-color: rgb(255, 0, 0);
+        }
+ .txt{
+    text-align: center;
+    font-size: 2.5rem;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    margin-top: 4%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+#tx{
+    width: 100%;
+    border: solid red;
+    height: 20%;
+}
+#container div:nth-child(2){
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: space-between;
+   align-items: center;
+   justify-content: space-around;
+    font-size: 2rem;
+    font-weight: 650;
+}
+#container div:nth-child(3){
+    width: 100%;
+    height: 25%;
+    display:grid;
+   
+}
+#container div:nth-child(3) p{
+    margin-top: 2%;
+    font-size: 1.9rem;
+    font-weight: 650;
+    text-align: center;
+    line-height: 0.10%;
+}
+#container div:nth-child(3) input{
+    border:0.80px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    font-size: 1.8rem;
+    background-color: rgb(212, 209, 209);
+    width: 50%;
+    height: 14vh;
+    margin-left: 23%;
+    margin-top: -5%;
+}
+#grid{
+    width: 100%;
+    height: 36%;
+    display: grid;
+    gap: 4%;
+    justify-content: center;
+    grid-template-columns: repeat(3,19%);
+    grid-template-rows: repeat(4,22%);
+
+}
+#grid>button{
+       font-size: 1.6rem;
+       border-radius: 4px;
+       background: transparent;
+       border: 0.020px solid rgb(73, 73, 73);
+}
+#grid button:nth-child(10){
+   width: 100%;
+   margin-left: 122%;
+  
+}
+#last{
+    width: 100%;
+    height: 8%;
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+#last button{
+    width: 60%;
+    height: 100%;
+    background: transparent;
+    border-radius: 2px;
+    border: 0.25px solid rgb(72, 70, 70);
+    font-size: 1.6rem;
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+           <div><!--start of first section-->
+                <div><p class="txt" id="minscore">45</p></div>
+                <div><p class="txt" id="maxscore">2019</p></div>
+                 
+           </div><!--end of first section-->
+                 
+           <div><!--start of second section-->
+              <p>Min</p>
+              <p>Max</p>
+           </div><!--end ofsecond section-->
+
+           <div><!--start of third section-->
+            <p>Score</p>
+            <input type="text" id="input" placeholder="Enter Value" value="">
+           </div><!--end of third section-->
+           
+           <div id="grid"> <!--srart of Fourth section-->
+             <button id="1" onclick="fun(this.id)">1</button>
+             <button id="2"onclick="fun(this.id)">2</button>
+             <button id="3"onclick="fun(this.id)">3</button>
+             <button id="4"onclick="fun(this.id)">4</button>
+             <button id="5"onclick="fun(this.id)">5</button>
+             <button id="6"onclick="fun(this.id)">6</button>
+             <button id="7"onclick="fun(this.id)">7</button>
+             <button id="8"onclick="fun(this.id)">8</button>
+             <button id="9"onclick="fun(this.id)">9</button>
+             <button id="0"onclick="fun(this.id)">0</button>
+           </div><!--end grid div-->
+           <div id="last">
+               <button onclick="enter()">ENTER</button>
+           </div>
+    </div><!--container hold all divs -->
+    <p id="pk"></p>
+<!-- Code injected by live-server -->
+<script>
+        let buttons=document.querySelectorAll("#grid>button");
+    let str="";
+    let min=document.getElementById("minscore");
+    let max=document.getElementById("maxscore");
+    let input=document.getElementById("input");
+ 
+  
+function fun(clicked){
+    let i=0;
+   i=clicked
+   str+=i;
+   input.value=str;
+
+}
+function enter(){
+    input.value="";
+    if(Number(str)<Number(min.innerText)){
+        min.innerText=str;
+    }
+    else if(Number(str)>Number(max.innerText)){
+        max.innerText=str;
+    }
+    str="";
+}
+
+</script>
+</body>
+</html>

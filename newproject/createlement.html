@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Createlement</title>
+    <style>
+        #first{
+            font-size: 2.5rem;
+            color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="p"></div>
+</body>
+</html>
+<script>
+    let p=document.createElement("p");
+    p.setAttribute("id" , "first");
+    p.innerText=`This is my first created element using createlement`;
+    let body=document.getElementById("p");
+    body.appendChild(p);
+</script>

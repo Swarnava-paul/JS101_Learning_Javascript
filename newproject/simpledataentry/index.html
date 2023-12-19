@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        #main{
+            display: flex;
+           
+            justify-content: space-evenly
+        }
+        #table{
+            width: 40%;
+            border: 2px solid red;
+            margin: auto;
+             
+        }
+        #entry{
+            margin-top: 4%;
+            border-radius: 7px;
+            display: grid;
+           gap: 1%;
+           width: 50%;
+           height: 280px;
+           box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        }
+        #entry input{
+            text-align: center;
+            font-size: 1.2rem;
+            outline: none;
+            width: 70%;
+            height: 8vh;
+            margin: auto;
+            border: 0.21px solid rgb(107, 105, 105);
+            border-radius: 7px;
+        }
+        #entry button{
+            width: 20%;
+            background: transparent;
+            margin: auto;
+            height: 7vh;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 6px;
+        }
+        #entry button:hover{
+            transition: 0.60s;
+               background-color: rgb(255, 18, 125);
+               font-size: 1rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="main">
+    <div id="entry">
+        <input type="text" placeholder="Enter Name" id="name" value="">
+        <input type="text" placeholder="Enter age" id="age" value="">
+        <input type="text" placeholder="Enter phone Number" id="phone" value="">
+        <button id="btn">Entry Data</button>
+        <button id="clear">Entry New Data</button>
+    </div>
+    
+        <table id="table" border="black">
+            <thead>
+            <tr style="background-color: red; color: white; font-size: 1rem;">
+                <td>Name</td>
+                <td>Age</td>
+                <td>Phone</td>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+    </div>
+</body>
+</html>
+<script>
+    document.getElementById("clear").addEventListener("click",Clear);
+    document.getElementById("btn").addEventListener("click" ,Do)
+    function Clear(){
+        let name=document.getElementById("name")// get all input values
+    let age=document.getElementById("age")// get all input values
+    let phone=document.getElementById("phone")// get all input values
+    name.value="";
+    age.value="";
+    phone.value="";
+    }
+function Do(){
+    let name=document.getElementById("name").value;// get all input values
+    let age=document.getElementById("age").value;// get all input values
+    let phone=document.getElementById("phone").value;// get all input values
+      
+
+    if(name ==""||age==""||phone==""){
+        alert("input All values")
+    }
+    else{
+        let table=document.getElementById("table").getElementsByTagName("tbody")[0]; // select table body
+
+let tr= document.createElement("tr"); // creat a new row
+
+  let data1,data2,data3;
+  data1=document.createElement("td"); // creat a new table data
+  data2=document.createElement("td");// creat a new table data
+  data3=document.createElement("td");// creat a new table data
+
+  data1.innerText=name; // insert values to table data from inputs
+  data2.innerText=age; //insert values to table data from inputs
+  data3.innerText=phone; //insert values to table data from inputs
+
+  tr.appendChild(data1); // append table data to table row
+  tr.appendChild(data2);// append table data to table row
+  tr.appendChild(data3);// append table data to table row
+
+  table.appendChild(tr); // append the table row to table body
+    }
+
+}
+</script>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form</title>
+  <style>
+    #main{
+      border: solid red;
+      width: 80%;
+      height: 250px;
+      margin: auto;
+      display: flex;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="main">
+    <form id="form1">
+      <input type="text" placeholder="name" id="name" value="">
+      <input type="text" placeholder="enter phone" id="phone" value="">
+      <input type="email" placeholder="email" id="email" value="">
+      <input type="text " placeholder="age" id="age" value="">
+      <input type="submit">
+    </form>
+  </div>
+  <h2 id="f"></h2>
+  <h2 id="g"></h2>
+  <h2 id="s"></h2>
+  <h2 id="p"></h2>
+</body>
+</html>
+<script>
+  let obj1={};
+  document.getElementById("form1").addEventListener("submit",dis);
+  let f=document.getElementById("f");
+  let g=document.getElementById("g");
+  let s=document.getElementById("s");
+  let p=document.getElementById("p");
+  function dis(){
+    event.preventDefault();
+    let name=document.getElementById("name").value;
+    let age=document.getElementById("age").value;
+    let email=document.getElementById("email").value;
+    let phone="";
+    phone=document.getElementById("phone").value;
+    count=0;
+
+    for(let i=0;i<phone.length;i+=1){
+      count++;
+
+    }
+    console.log(`${count} - is count  ${phone.length} -is phone length`)
+    
+      if(count==10){
+    p.innerText=`${phone} entered number is a valid number`;
+  }
+  else{
+    p.innerText=`${phone} entered number is not valid`;
+  }
+
+    
+ 
+    f.innerText=name;
+    if(age>18){
+      g.innerText=`${age} is correct`;
+    }
+    else{
+      g.innerText=`${age} is not correct`;
+    }
+    s.innerText=email;
+
+    obj1.Name=name;
+    obj1.Age=age;
+    obj1.Phone=phone;
+    obj1.Email=email;
+    
+    console.log(obj1);
+  let str="";
+  for(let x in obj1){
+    str+=`${x} : ${obj1[x]}  , `;
+
+    
+  }
+  alert(str);
+    
+  }
+
+  
+  
+</script>
