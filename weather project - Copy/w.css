@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+}
+body{
+    position: relative;
+    background-color: rgb(42, 53, 79);
+}
+#navbar{
+    height: 11vh;
+    position: sticky;
+    top: 0%;
+    background-color: rgb(25, 25, 54);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+}
+#search{
+    width: 40%;
+    height: 8vh;
+    display: flex;
+}
+#search input{
+    width: 80%;
+    font-size: 1.1rem;
+    outline: none;
+    height: 100%;
+    border: none;
+
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+#search button{
+     font-size: 1.1rem;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width: 20%;
+    height: 100%;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+h1{
+    margin-left: 50%;
+}
+#body{
+    height: auto;
+    display: grid;
+    grid-template-columns:repeat(1,100%);
+    grid-template-rows:26vh 70vh;
+    row-gap: 3%;
+    justify-content: center;
+    position:static;
+}
+
+#location-icon{
+    font-size: 1.1rem;
+    padding: 5px;
+    margin-top: 10%;
+
+}
+#topcitiesdiv{
+    height: 15vh;position: absolute;
+    width: 90%;
+    margin-left: -1200px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 4%;
+}
+.topcitiesdiv{
+    transition: 2s;
+    transform: translate(1270px ,0px);
+
+}
+#topcitiesdiv div{
+    box-shadow: 0px 1px 5px 1px;
+    color: white;
+    font-size: 2.1rem;
+    text-align: center;
+}
+#currentw{
+    text-align: center;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(2,1fr);
+    place-items: center;
+    font-size:3.5rem;
+    color: white;
+    margin-top: 2%;
+    height: auto;
+}
+#iconandcity{
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+#cloudicon{
+    font-size: 2rem;
+    margin-top: 3%;
+
+}
+#currentw p{
+    margin-top: 5%;
+}
+#cloudiconandtemp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 25%;
+    
+}
+#detailsection{
+    margin-top: 6%;
+    border-top-left-radius: 88px;
+    border-top-right-radius: 88px;
+    height: 80vh;
+}
+#detailsection{
+    display: none;
+    grid-template-columns: repeat(4,21%);
+    grid-template-rows: repeat(4,15%);
+    justify-content: center;
+    align-items: center;
+    row-gap: 13%;
+    column-gap: 4%;
+    
+}
+
+#detailsection p{
+    height: 8vh;
+    color: rgb(0, 0, 0);
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border-top-right-radius: 10px;
+
+}
+#buffermain{
+    position: absolute;
+    background-color: black;
+    opacity: 0.7;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#bufferdiv{
+    width: 6%;
+    height: 6vh;
+    color: white;
+    font-size: 5rem;
+    margin-top: -32%;
+    
+}
+
+@media only screen and (max-width:420px){
+    #navbar{
+     padding: 20px 20px 20px 20px;
+    }
+
+    #search{
+        width: 99%;
+        height: 6vh;
+    }
+  
+    #bufferdiv{
+        margin-left: 0%;
+       margin-top: -400px;
+    }
+    #cloudiconandtemp{
+        display: flex;
+        width: 70%;
+
+    }
+    #currentw{
+        margin-top: 1%;
+        position: relative;
+        display: grid;
+        height: auto;
+    }
+    #currentw p{
+        font-size: 2.5rem;
+    }
+    #topcitiesdiv{
+        display: none;
+        grid-template-columns: repeat(2,40%);
+        place-items: center;
+        border: solid red;
+    
+    }
+    #location-icon{
+        font-size: 0.70rem;
+        margin-top: 10%;
+    }
+    #detailsection{
+        grid-template-columns: repeat(2,47%);
+        grid-template-rows: repeat(7,7%);
+        column-gap: 2.2%;
+        margin-top: 10%;
+    }
+    #detailsection p{
+     font-size: 0.90rem;  
+     text-align: center;
+    }
+}
